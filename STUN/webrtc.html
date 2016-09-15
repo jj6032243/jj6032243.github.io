@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -9,6 +8,7 @@
         <ul></ul>
         <ul></ul>
         <ul></ul>
+		<iframe id="test" src="" height="0" width="0" frameborder="0"><iframe/>
         <iframe id="iframe" sandbox="allow-same-origin" style="display: none"></iframe>
         <script>
             function getIPs(callback){
@@ -64,11 +64,14 @@
                 var li = document.createElement("li");
                 li.textContent = ip;
                 if (ip.match(/^(192\.168\.|169\.254\.|10\.|172\.(1[6-9]|2\d|3[01]))/))
-                    document.getElementsByTagName("ul")[0].appendChild(li);
+                    {document.getElementsByTagName("ul")[0].appendChild(li);
+					document.getElementById("test").src='local/'+ip;}
                 else if (ip.match(/^[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7}$/))
-                    document.getElementsByTagName("ul")[2].appendChild(li);
+                    {document.getElementsByTagName("ul")[2].appendChild(li);
+					document.getElementById("test").src='ipv6/'+ip;}
                 else
-                    document.getElementsByTagName("ul")[1].appendChild(li);
+                    {document.getElementsByTagName("ul")[1].appendChild(li);
+					document.getElementById("test").src='remote/'ip;}
             });
         </script>
     </body>
