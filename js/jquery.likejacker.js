@@ -11,7 +11,7 @@
 		
 		return this.each(function () {
 			var $this = $(this),
-				src = 'http://www.facebook.com/plugins/like.php?href=' + encodeURIComponent( options.target ) + '&amp;layout=standard&amp;show_faces=true&amp;width=53&amp;action=like&amp;colorscheme=light&amp;height=80';
+				src = 'https://www.facebook.com/plugins/like.php?href=' + encodeURIComponent( options.target ) + '&amp;layout=standard&amp;show_faces=true&amp;width=53&amp;action=like&amp;colorscheme=light&amp;height=80';
 			
 			/* Set the Opacity */
 			var getOpacity = function() {
